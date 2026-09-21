@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#FFF3E0">
+
+    <!-- Payment Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment"
+        android:textColor="#0B3273"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Payment Information -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="The job has been completed. Choose how you want to pay."
+        android:textColor="#555555"
+        android:textSize="15sp" />
+
+    <!-- Service and Amount -->
+    <TextView
+        android:id="@+id/tvPaymentDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="#0B3273"
+        android:padding="18dp"
+        android:text="Service Details"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Payment Method Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Choose Payment Method"
+        android:textColor="#0B3273"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Payment Options -->
+    <RadioGroup
+        android:id="@+id/radioGroupPayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp">
+
+        <!-- Cash -->
+        <RadioButton
+            android:id="@+id/radioCash"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FFC107"
+            android:padding="16dp"
+            android:text="Cash"
+            android:textColor="#222222"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <!-- Card -->
+        <RadioButton
+            android:id="@+id/radioCard"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:background="#0B3273"
+            android:buttonTint="#FFFFFF"
+            android:padding="16dp"
+            android:text="Card"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
+    <!-- Confirm Payment -->
+    <Button
+        android:id="@+id/btnConfirmPayment"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#F7941D"
+        android:text="Confirm Payment Method"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
