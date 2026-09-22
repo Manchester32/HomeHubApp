@@ -131,9 +131,9 @@ Make several meaningful commits as you continue testing and improving the app.
 
 ## Demonstration Video
 
-Add your unlisted video link here before submission:
-
-`VIDEO LINK: ADD_YOUR_VIDEO_LINK_HERE`
+Link:
+https://youtu.be/TL7hzY6WLqE
+`
 
 In the video, show:
 
@@ -152,3 +152,6 @@ Include a voice-over explaining what you are demonstrating.
 ## AI Use
 
 AI tools were used to help explain errors, debug code, and improve documentation wording. The project code and functionality should still be reviewed, tested and explained by the student before submission.
+
+
+
