@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiClient {
     // BlueStacks connects to the Windows host through this local network address.
     // If your PC/VM IP changes, update only this line.
-    private const val BASE_URL = "http://10.0.0.4:5092/"
+    private const val BASE_URL = "http://10.0.2.2:5092/"
 
     val retrofit: Retrofit by lazy {
         Retrofit.Builder()
@@ -19,3 +19,28 @@ object ApiClient {
         retrofit.create(ApiService::class.java)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
