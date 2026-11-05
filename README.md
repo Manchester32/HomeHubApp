@@ -1,4 +1,4 @@
-# HomeHub 🏠
+# HomeHub 
 
 ![HomeHub logo](screenshots/logo.png)
 
@@ -6,7 +6,7 @@ HomeHub is an Android app (Kotlin) that lets South African households book trust
 (plumbing, electrical, cleaning, painting, pest control and more) from their phone, track the job,
 and choose Cash or Card once the job is done.
 
-**Team: Amadyani Systems ** Vuyolwethu Sicwebi,Musasa Ncukana and Cwenga Sokupe | **Module:Open Source Coding** module code:OPSC6321 | **Final PoE tag:** `final-poe`
+**Team: Amadyani Systems ** Vuyolwethu Sicwebi,Musasa Ncukana and Cwenga Sokupe | **Module:Open Source Coding** module code:OPSC6321 | **Final PoE ** `final-poe`
 
 ## 1. Purpose of the app
 Finding a reliable plumber or electrician is stressful. HomeHub gives users one place to request a
