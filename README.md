@@ -6,7 +6,7 @@ YouTube link:
 
 # HomeHub 
 
-![HomeHub logo](screenshots/logo.png)
+
 
 HomeHub is an Android app (Kotlin) that lets South African households book trusted home services
 (plumbing, electrical, cleaning, painting, pest control and more) from their phone, track the job,
@@ -41,7 +41,7 @@ It keeps working with a poor or missing connection, and it is available in Engli
 - **Security:** hashed passwords, token-verified SSO, and Firestore/Storage rules that require sign-in.
 - **Logging:** `Log.d / Log.i / Log.e` with the tag `HomeHub` shows what happens at each step.
 
-![Screenshots](screenshots/screens.png)
+
 
 ## 4. Architecture
 - Android app (Kotlin, Retrofit) → ASP.NET Core API → SQLite
@@ -65,7 +65,7 @@ Email/password users receive a silent anonymous Firebase session (`FirebaseHelpe
 - **GitHub Actions** (`.github/workflows/android.yml`) runs on every push and pull request. It sets up JDK 17, runs the unit tests (`ValidationUtilsTest`, `RequestStatusHelperTest`), builds the debug APK and uploads the test report and the APK.
 - `google-services.json` is stored as an encrypted GitHub secret (`GOOGLE_SERVICES_JSON`) and is not in the repository.
 
-![Passing workflow](screenshots/actions.png)
+
 
 ## 6. Running the project
 1. Clone the repo and open it in Android Studio.
