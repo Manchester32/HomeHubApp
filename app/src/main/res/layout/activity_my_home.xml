@@ -17,7 +17,7 @@
             android:id="@+id/tvBackHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="← Back to Home"
+            android:text="@string/back_home"
             android:textColor="#0B3273"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="My Home"
+            android:text="@string/my_home"
             android:textColor="#0B3273"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -36,9 +36,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Manage your profile and home information."
+            android:text="@string/manage_profile"
             android:textColor="#555555"
             android:textSize="15sp" />
+
+        <!-- Profile picture (stored in Firebase Storage) -->
+        <ImageView
+            android:id="@+id/ivProfilePhoto"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:contentDescription="Profile photo"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery" />
+
+        <Button
+            android:id="@+id/btnChangePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#0B3273"
+            android:text="@string/change_photo"
+            android:textColor="#FFFFFF" />
 
         <!-- Profile Section -->
         <TextView
@@ -47,7 +68,7 @@
             android:layout_marginTop="25dp"
             android:background="#0B3273"
             android:padding="16dp"
-            android:text="Profile Information"
+            android:text="@string/profile_information"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -57,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="15dp"
-            android:hint="Full Name"
+            android:hint="@string/full_name"
             android:padding="14dp" />
 
         <EditText
@@ -65,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="12dp"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="14dp" />
 
@@ -76,7 +97,7 @@
             android:layout_marginTop="25dp"
             android:background="#F7941D"
             android:padding="16dp"
-            android:text="Home Information"
+            android:text="@string/home_information"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -87,7 +108,7 @@
             android:layout_height="70dp"
             android:layout_marginTop="15dp"
             android:gravity="top"
-            android:hint="Home Address"
+            android:hint="@string/home_address"
             android:inputType="textPostalAddress"
             android:padding="14dp" />
 
@@ -97,7 +118,7 @@
             android:layout_height="55dp"
             android:layout_marginTop="22dp"
             android:backgroundTint="#FFC107"
-            android:text="Save Information"
+            android:text="@string/save_information"
             android:textColor="#222222"
             android:textStyle="bold" />
 
@@ -109,7 +130,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="25dp"
             android:backgroundTint="#0B3273"
-            android:text="Logout"
+            android:text="@string/logout"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
 

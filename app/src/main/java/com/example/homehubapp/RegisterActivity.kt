@@ -38,10 +38,10 @@ class RegisterActivity : AppCompatActivity() {
             val confirmPassword = etConfirmPassword.text.toString()
 
             val error = when {
-                name.isBlank() || email.isBlank() || password.isBlank() || confirmPassword.isBlank() -> "Please complete all fields"
-                !ValidationUtils.isValidEmail(email) -> "Please enter a valid email address"
-                !ValidationUtils.isValidPassword(password) -> "Password needs 6+ characters, uppercase, lowercase, number and symbol"
-                password != confirmPassword -> "Passwords do not match"
+                name.isBlank() || email.isBlank() || password.isBlank() || confirmPassword.isBlank() -> getString(R.string.msg_complete_fields)
+                !ValidationUtils.isValidEmail(email) -> getString(R.string.msg_invalid_email)
+                !ValidationUtils.isValidPassword(password) -> getString(R.string.password_rules)
+                password != confirmPassword -> getString(R.string.msg_passwords_mismatch)
                 else -> null
             }
 
@@ -58,7 +58,7 @@ class RegisterActivity : AppCompatActivity() {
                         btnRegister.isEnabled = true
                         if (response.isSuccessful) {
                             Log.i("HomeHub", "Registration successful")
-                            Toast.makeText(this@RegisterActivity, "Registration successful. Please log in.", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@RegisterActivity, getString(R.string.msg_register_success), Toast.LENGTH_LONG).show()
                             val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                                 .putExtra("registered_email", email)
                             startActivity(intent)
@@ -66,7 +66,7 @@ class RegisterActivity : AppCompatActivity() {
                         } else {
                             Toast.makeText(
                                 this@RegisterActivity,
-                                ApiErrorParser.message(response, "Registration failed"),
+                                ApiErrorParser.message(response, getString(R.string.msg_register_failed)),
                                 Toast.LENGTH_LONG
                             ).show()
                         }
@@ -77,7 +77,7 @@ class RegisterActivity : AppCompatActivity() {
                         Log.e("HomeHub", "Registration API failed", t)
                         Toast.makeText(
                             this@RegisterActivity,
-                            "Could not connect to the HomeHub server. Make sure the API is running.",
+                            getString(R.string.msg_server_down),
                             Toast.LENGTH_LONG
                         ).show()
                     }

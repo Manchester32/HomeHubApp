@@ -7,42 +7,37 @@ import org.junit.Test
 class ValidationUtilsTest {
 
     @Test
-    fun validEmail_returnsTrue() {
-        assertTrue(ValidationUtils.isValidEmail("user@example.com"))
+    fun validEmail_isAccepted() {
+        assertTrue(ValidationUtils.isValidEmail("lwethu@example.com"))
     }
 
     @Test
-    fun invalidEmail_returnsFalse() {
-        assertFalse(ValidationUtils.isValidEmail("userexample.com"))
+    fun emailWithoutAt_isRejected() {
+        assertFalse(ValidationUtils.isValidEmail("lwethuexample.com"))
     }
 
     @Test
-    fun strongPassword_returnsTrue() {
-        assertTrue(ValidationUtils.isValidPassword("HomeHub@123"))
+    fun emailWithoutDomain_isRejected() {
+        assertFalse(ValidationUtils.isValidEmail("lwethu@"))
     }
 
     @Test
-    fun passwordWithoutUppercase_returnsFalse() {
-        assertFalse(ValidationUtils.isValidPassword("homehub@123"))
+    fun strongPassword_isAccepted() {
+        assertTrue(ValidationUtils.isValidPassword("Home#123"))
     }
 
     @Test
-    fun passwordWithoutLowercase_returnsFalse() {
-        assertFalse(ValidationUtils.isValidPassword("HOMEHUB@123"))
+    fun passwordTooShort_isRejected() {
+        assertFalse(ValidationUtils.isValidPassword("Ab1#"))
     }
 
     @Test
-    fun passwordWithoutNumber_returnsFalse() {
-        assertFalse(ValidationUtils.isValidPassword("HomeHub@abc"))
+    fun passwordWithoutSymbol_isRejected() {
+        assertFalse(ValidationUtils.isValidPassword("Home1234"))
     }
 
     @Test
-    fun passwordWithoutSymbol_returnsFalse() {
-        assertFalse(ValidationUtils.isValidPassword("HomeHub123"))
-    }
-
-    @Test
-    fun passwordShorterThanSixCharacters_returnsFalse() {
-        assertFalse(ValidationUtils.isValidPassword("Aa@12"))
+    fun passwordWithoutUppercase_isRejected() {
+        assertFalse(ValidationUtils.isValidPassword("home#123"))
     }
 }

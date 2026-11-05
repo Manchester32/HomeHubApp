@@ -42,21 +42,21 @@ class BookServiceActivity : AppCompatActivity() {
             val userId = SessionManager.userId(this)
 
             if (serviceId == -1 || userId == -1) {
-                showMessage("Session or service information is missing. Please log in again.")
+                showMessage(getString(R.string.msg_session_missing))
                 return@setOnClickListener
             }
             if (description.isBlank() || address.isBlank() || dateText.isBlank()) {
-                showMessage("Please complete all fields")
+                showMessage(getString(R.string.msg_complete_fields))
                 return@setOnClickListener
             }
 
             val apiDate = parseDate(dateText)
             if (apiDate == null) {
-                showMessage("Use a valid date such as 20/09/2026")
+                showMessage(getString(R.string.msg_invalid_date))
                 return@setOnClickListener
             }
             if (apiDate == "PAST") {
-                showMessage("Preferred date cannot be in the past")
+                showMessage(getString(R.string.msg_past_date))
                 return@setOnClickListener
             }
 
@@ -69,27 +69,43 @@ class BookServiceActivity : AppCompatActivity() {
                 preferredDate = apiDate
             )
 
+            // Offline mode: no connection, so save the request on the phone and sync it later
+            if (!SyncManager.isOnline(this)) {
+                saveOffline(request, selectedService)
+                return@setOnClickListener
+            }
+
             ApiClient.service.createServiceRequest(request)
                 .enqueue(object : Callback<RequestCreatedResponse> {
                     override fun onResponse(call: Call<RequestCreatedResponse>, response: Response<RequestCreatedResponse>) {
                         btnSubmitRequest.isEnabled = true
                         if (response.isSuccessful) {
                             Log.i("HomeHub", "Service request created")
-                            showMessage("Service request submitted successfully")
+                            showMessage(getString(R.string.msg_request_ok))
                             startActivity(Intent(this@BookServiceActivity, MyRequestsActivity::class.java))
                             finish()
                         } else {
-                            showMessage(ApiErrorParser.message(response, "Could not submit request"))
+                            showMessage(ApiErrorParser.message(response, getString(R.string.msg_request_failed)))
                         }
                     }
 
                     override fun onFailure(call: Call<RequestCreatedResponse>, t: Throwable) {
                         btnSubmitRequest.isEnabled = true
                         Log.e("HomeHub", "Create request API failed", t)
-                        showMessage("Could not connect to the HomeHub server")
+                        // Server unreachable: keep the request locally so the user does not lose it
+                        saveOffline(request, selectedService)
                     }
                 })
         }
+    }
+
+    // Stores the request in the local SQLite database; SyncManager sends it later
+    private fun saveOffline(request: CreateServiceRequest, serviceName: String) {
+        LocalDb.get(this).addPending(request, serviceName)
+        Log.i("HomeHub", "No connection - request saved locally for later sync")
+        showMessage(getString(R.string.msg_saved_offline))
+        startActivity(Intent(this, MyRequestsActivity::class.java))
+        finish()
     }
 
     private fun parseDate(value: String): String? {

@@ -29,7 +29,7 @@ class PaymentActivity : AppCompatActivity() {
         val radioGroup = findViewById<RadioGroup>(R.id.radioGroupPayment)
         val btnConfirm = findViewById<Button>(R.id.btnConfirmPayment)
 
-        tvPaymentDetails.text = "Service: $service\nAmount: R${String.format("%.2f", amount)}"
+        tvPaymentDetails.text = getString(R.string.lbl_payment_details, service, String.format("%.2f", amount))
 
         when (SettingsStore.defaultPayment(this)) {
             "Card" -> findViewById<RadioButton>(R.id.radioCard).isChecked = true
@@ -39,11 +39,13 @@ class PaymentActivity : AppCompatActivity() {
         btnConfirm.setOnClickListener {
             val selectedId = radioGroup.checkedRadioButtonId
             if (requestId == -1 || selectedId == -1) {
-                Toast.makeText(this, "Please choose Cash or Card", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.msg_choose_payment), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val method = findViewById<RadioButton>(selectedId).text.toString()
+            // The API expects the English words "Cash" or "Card", so we do not send the translated text
+            val method = if (selectedId == R.id.radioCard) "Card" else "Cash"
+            val methodLabel = findViewById<RadioButton>(selectedId).text.toString()
             btnConfirm.isEnabled = false
 
             ApiClient.service.createPayment(CreatePaymentRequest(requestId, method))
@@ -54,14 +56,14 @@ class PaymentActivity : AppCompatActivity() {
                             Log.i("HomeHub", "Payment method confirmed for request $requestId")
                             Toast.makeText(
                                 this@PaymentActivity,
-                                "$method payment method saved successfully",
+                                getString(R.string.msg_payment_saved, methodLabel),
                                 Toast.LENGTH_LONG
                             ).show()
                             finish()
                         } else {
                             Toast.makeText(
                                 this@PaymentActivity,
-                                ApiErrorParser.message(response, "Could not save payment"),
+                                ApiErrorParser.message(response, getString(R.string.msg_payment_failed)),
                                 Toast.LENGTH_LONG
                             ).show()
                         }
@@ -70,7 +72,7 @@ class PaymentActivity : AppCompatActivity() {
                     override fun onFailure(call: Call<PaymentResponse>, t: Throwable) {
                         btnConfirm.isEnabled = true
                         Log.e("HomeHub", "Payment API failed", t)
-                        Toast.makeText(this@PaymentActivity, "Could not connect to the HomeHub server", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@PaymentActivity, getString(R.string.msg_server_down), Toast.LENGTH_LONG).show()
                     }
                 })
         }
