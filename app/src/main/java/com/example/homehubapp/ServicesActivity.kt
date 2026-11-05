@@ -23,6 +23,7 @@ class ServicesActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.tvBack).setOnClickListener { finish() }
 
+        // Keys are the English names stored in the database; the button text itself is translated
         val buttons = mapOf(
             R.id.btnPlumbing to "Plumbing",
             R.id.btnElectrical to "Electrical",
@@ -39,34 +40,49 @@ class ServicesActivity : AppCompatActivity() {
             findViewById<Button>(id).setOnClickListener {
                 val service = servicesByName[name]
                 if (service == null) {
-                    Toast.makeText(this, "Services are still loading. Please try again.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.msg_services_loading), Toast.LENGTH_SHORT).show()
                 } else {
                     startActivity(
                         Intent(this, BookServiceActivity::class.java)
                             .putExtra("serviceId", service.id)
-                            .putExtra("service", service.name)
+                            .putExtra("service", findViewById<Button>(id).text.toString())
                     )
                 }
             }
         }
 
-        loadServices()
+        // Step 1: use the saved copy straight away so the buttons work even with no connection
+        val cached = LocalDb.get(this).getServices()
+        cached.forEach { servicesByName[it.name] = it }
+        Log.d("HomeHub", "Loaded ${cached.size} services from the local cache")
+
+        // Step 2: refresh from the API in the background
+        loadServices(cached.isNotEmpty())
     }
 
-    private fun loadServices() {
+    private fun loadServices(haveCache: Boolean) {
         ApiClient.service.getServices().enqueue(object : Callback<List<ServiceDto>> {
             override fun onResponse(call: Call<List<ServiceDto>>, response: Response<List<ServiceDto>>) {
                 if (response.isSuccessful) {
-                    response.body().orEmpty().forEach { servicesByName[it.name] = it }
-                    Log.d("HomeHub", "Loaded ${servicesByName.size} services from API")
-                } else {
-                    Toast.makeText(this@ServicesActivity, "Could not load services", Toast.LENGTH_LONG).show()
+                    val list = response.body().orEmpty()
+                    list.forEach { servicesByName[it.name] = it }
+                    // Save the fresh list locally so booking works offline next time
+                    LocalDb.get(this@ServicesActivity).saveServices(list)
+                    Log.d("HomeHub", "Loaded ${list.size} services from API and cached them")
+                } else if (!haveCache) {
+                    Toast.makeText(this@ServicesActivity, getString(R.string.msg_services_failed), Toast.LENGTH_LONG).show()
                 }
             }
 
             override fun onFailure(call: Call<List<ServiceDto>>, t: Throwable) {
                 Log.e("HomeHub", "Services API failed", t)
-                Toast.makeText(this@ServicesActivity, "Could not connect to the HomeHub server", Toast.LENGTH_LONG).show()
+                if (haveCache) {
+                    // Offline: the saved services are already on screen
+                    Toast.makeText(this@ServicesActivity, getString(R.string.msg_services_offline), Toast.LENGTH_LONG).show()
+                } else {
+                    // Offline and nothing saved yet: the user must open Services once while online
+                    Toast.makeText(this@ServicesActivity, getString(R.string.msg_server_down), Toast.LENGTH_LONG).show()
+                }
             }
         })
     }

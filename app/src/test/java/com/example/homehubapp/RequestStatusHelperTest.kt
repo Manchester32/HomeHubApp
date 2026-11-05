@@ -22,7 +22,7 @@ class RequestStatusHelperTest {
     }
 
     @Test
-    fun completedPrototypeAmount_is450() {
-        assertEquals(450.0, RequestStatusHelper.amountWhenCompleted(), 0.0)
+    fun completedAmount_isPositive() {
+        assertEquals(450.0, RequestStatusHelper.amountWhenCompleted(), 0.001)
     }
 }

@@ -17,7 +17,7 @@
             android:id="@+id/tvBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="← Back to Home"
+            android:text="@string/back_home"
             android:textColor="#0B3273"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="Our Services"
+            android:text="@string/our_services"
             android:textColor="#0B3273"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="20dp"
-            android:text="Choose the home service you need."
+            android:text="@string/choose_service"
             android:textColor="#555555"
             android:textSize="15sp" />
 
@@ -55,9 +55,9 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="6dp"
                 android:backgroundTint="#0B3273"
-                android:text="&#10;Plumbing"
+                android:text="@string/svc_plumbing"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <!-- Electrical -->
@@ -68,9 +68,9 @@
                 android:layout_weight="1"
                 android:layout_marginStart="6dp"
                 android:backgroundTint="#F7941D"
-                android:text="&#10;Electrical"
+                android:text="@string/svc_electrical"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -90,9 +90,9 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="6dp"
                 android:backgroundTint="#FFC107"
-                android:text="Cleaning"
+                android:text="@string/svc_cleaning"
                 android:textColor="#222222"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <!-- Painting -->
@@ -103,9 +103,9 @@
                 android:layout_weight="1"
                 android:layout_marginStart="6dp"
                 android:backgroundTint="#0B3273"
-                android:text="Painting"
+                android:text="@string/svc_painting"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -125,9 +125,9 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="6dp"
                 android:backgroundTint="#F7941D"
-                android:text="Pest Control"
+                android:text="@string/svc_pest"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
             <!-- Appliance Repair -->
@@ -138,9 +138,9 @@
                 android:layout_weight="1"
                 android:layout_marginStart="6dp"
                 android:backgroundTint="#FFC107"
-                android:text="Appliance Repair"
+                android:text="@string/svc_appliance"
                 android:textColor="#222222"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -160,9 +160,9 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="6dp"
                 android:backgroundTint="#0B3273"
-                android:text="Carpentry"
+                android:text="@string/svc_carpentry"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <!-- Gardening -->
@@ -173,9 +173,9 @@
                 android:layout_weight="1"
                 android:layout_marginStart="6dp"
                 android:backgroundTint="#F7941D"
-                android:text="Garden &amp;&#10;Landscaping"
+                android:text="@string/svc_garden"
                 android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -188,7 +188,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="25dp"
             android:backgroundTint="#FFC107"
-            android:text=" Handyman"
+            android:text="@string/svc_handyman"
             android:textColor="#222222"
             android:textSize="16sp"
             android:textStyle="bold" />

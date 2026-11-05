@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create HomeHub Account"
+        android:text="@string/create_account"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#0B3273"
@@ -21,7 +21,7 @@
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:hint="Full Name"
+        android:hint="@string/full_name"
         android:padding="14dp" />
 
     <EditText
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:padding="14dp" />
 
@@ -44,7 +44,7 @@
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="14dp" />
 
@@ -61,7 +61,7 @@
             android:id="@+id/etConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:hint="Confirm Password"
+            android:hint="@string/confirm_password"
             android:inputType="textPassword"
             android:padding="14dp" />
 
@@ -71,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Password must have uppercase, lowercase, number, symbol, and at least 6 characters."
+        android:text="@string/password_rules"
         android:textSize="13sp"
         android:textColor="#666666" />
 
@@ -80,7 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="22dp"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="#FFFFFF"
         android:backgroundTint="#0B3273" />
 
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
-        android:text="Already have an account? Login"
+        android:text="@string/have_account_login"
         android:textColor="#0B3273"
         android:textSize="15sp"
         android:textStyle="bold" />

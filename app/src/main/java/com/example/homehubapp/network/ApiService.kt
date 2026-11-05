@@ -16,11 +16,17 @@ interface ApiService {
     @POST("api/Auth/login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
+    // Single sign-on: sends the Google ID token, API verifies it and returns the HomeHub user
+    @POST("api/Auth/sso")
+    fun ssoLogin(@Body request: SsoRequest): Call<LoginResponse>
+
     @GET("api/Services")
     fun getServices(): Call<List<ServiceDto>>
 
     @POST("api/Requests")
     fun createServiceRequest(@Body request: CreateServiceRequest): Call<RequestCreatedResponse>
+
+
 
     @GET("api/Requests/user/{userId}")
     fun getUserRequests(@Path("userId") userId: Int): Call<List<ServiceRequestDto>>

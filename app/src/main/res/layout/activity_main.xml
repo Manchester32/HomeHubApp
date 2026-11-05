@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HomeHub"
+            android:text="@string/app_name"
             android:textColor="#0B3273"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="How can we help you today?"
+            android:text="@string/how_help"
             android:textColor="#0B3273"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -46,7 +46,7 @@
             android:layout_marginTop="25dp"
             android:background="#0B3273"
             android:padding="20dp"
-            android:text="Quality home services just a tap away."
+            android:text="@string/tagline"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -58,7 +58,7 @@
             android:layout_height="55dp"
             android:layout_marginTop="15dp"
             android:backgroundTint="#F7941D"
-            android:text="Book a Service"
+            android:text="@string/book_service"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
@@ -67,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Quick Actions"
+            android:text="@string/quick_actions"
             android:textColor="#0B3273"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -88,9 +88,9 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="5dp"
                 android:backgroundTint="#0B3273"
-                android:text="Services"
+                android:text="@string/services"
                 android:textColor="#FFFFFF"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
             <!-- My Requests -->
@@ -102,7 +102,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:backgroundTint="#0B3273"
-                android:text="My Requests"
+                android:text="@string/my_requests"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -115,12 +115,22 @@
                 android:layout_weight="1"
                 android:layout_marginStart="5dp"
                 android:backgroundTint="#0B3273"
-                android:text="My Home"
+                android:text="@string/my_home"
                 android:textColor="#FFFFFF"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnReviews"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="14dp"
+            android:backgroundTint="#F7941D"
+            android:text="@string/reviews"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnSettings"
@@ -128,7 +138,7 @@
             android:layout_height="55dp"
             android:layout_marginTop="14dp"
             android:backgroundTint="#FFC107"
-            android:text="Settings"
+            android:text="@string/settings"
             android:textColor="#222222"
             android:textStyle="bold" />
 
@@ -137,7 +147,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Overview"
+            android:text="@string/overview"
             android:textColor="#0B3273"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -147,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:padding="16dp"
-            android:text="No active service requests yet."
+            android:text="@string/no_active"
             android:textColor="#555555"
             android:textSize="15sp" />
 

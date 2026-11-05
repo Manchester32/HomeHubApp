@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Book a Service"
+            android:text="@string/book_a_service"
             android:textColor="#0B3273"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:text="Tell us what you need help with."
+            android:text="@string/tell_us_help"
             android:textColor="#555555"
             android:textSize="15sp" />
 
@@ -35,7 +35,7 @@
             android:layout_marginTop="24dp"
             android:background="#0B3273"
             android:padding="18dp"
-            android:text="Selected Service"
+            android:text="@string/selected_service"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -46,7 +46,7 @@
             android:layout_height="120dp"
             android:layout_marginTop="18dp"
             android:gravity="top"
-            android:hint="Describe the problem"
+            android:hint="@string/describe_problem"
             android:inputType="textMultiLine"
             android:padding="14dp" />
 
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="14dp"
-            android:hint="Service address"
+            android:hint="@string/service_address"
             android:inputType="textPostalAddress"
             android:padding="14dp" />
 
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="14dp"
-            android:hint="Preferred date e.g. 20/08/2026"
+            android:hint="@string/preferred_date_hint"
             android:inputType="date"
             android:padding="14dp" />
 
@@ -74,7 +74,7 @@
             android:layout_marginTop="20dp"
             android:background="#FFC107"
             android:padding="14dp"
-            android:text="Payment is made only after the job is completed. You can choose Cash or Card."
+            android:text="@string/payment_note"
             android:textColor="#222222"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -85,7 +85,7 @@
             android:layout_height="58dp"
             android:layout_marginTop="22dp"
             android:backgroundTint="#F7941D"
-            android:text="Submit Request"
+            android:text="@string/submit_request"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold" />

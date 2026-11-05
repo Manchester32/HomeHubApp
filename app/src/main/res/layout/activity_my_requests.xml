@@ -17,7 +17,7 @@
             android:id="@+id/tvBackRequests"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="← Back to Home"
+            android:text="@string/back_home"
             android:textColor="#0B3273"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="My Requests"
+            android:text="@string/my_requests"
             android:textColor="#0B3273"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -36,9 +36,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:text="Track your home service requests."
+            android:text="@string/track_requests"
             android:textColor="#555555"
             android:textSize="15sp" />
+
+        <!-- Requests saved on the phone that are waiting to sync (always shown first) -->
+        <LinearLayout
+            android:id="@+id/pendingContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" />
 
         <!-- Empty message -->
         <TextView
@@ -48,7 +56,7 @@
             android:layout_marginTop="30dp"
             android:gravity="center"
             android:padding="20dp"
-            android:text="You have no service requests yet."
+            android:text="@string/no_requests"
             android:textColor="#777777"
             android:textSize="16sp" />
 
