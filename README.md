@@ -1,3 +1,7 @@
+
+Ma'am, please also take this file and paste it into the **app** folder inside the **HomeHub** project.
+
+
 YouTube link:
 
 # HomeHub 
