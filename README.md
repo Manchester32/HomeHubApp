@@ -1,8 +1,6 @@
 
-Ma'am, please also take this file and paste it into the **app** folder inside the **HomeHub** project.
-
-
-YouTube link:
+This is the correct video, which demonstrates all the features of the application, shows that everything is working properly, and includes clear, audible sound.
+YouTube Link : https://youtu.be/w2owiZs3ufg?si=ovkp0Zubu07Z_tFx
 
 # HomeHub 
 
