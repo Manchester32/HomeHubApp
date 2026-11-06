@@ -1,6 +1,6 @@
 
 This is the correct video, which demonstrates all the features of the application, shows that everything is working properly, and includes clear, audible sound.
-YouTube Link : https://youtu.be/w2owiZs3ufg?si=ovkp0Zubu07Z_tFx
+YouTube Link : https://youtu.be/cTyNXooQc6U?si=5bAfocazqNgZjP_q
 
 # HomeHub 
 
