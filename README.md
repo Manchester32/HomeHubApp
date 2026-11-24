@@ -106,6 +106,7 @@ The signed release build, app icon, phone screenshots and Play Console upload ar
 ## 9. AI tools used
 - **Planning:** Claude helped us break the final PoE into two parts (cloud and API work, and app experience and quality work) and suggested a Git branching order to avoid merge conflicts.
 - **Deployment help:** Claude explained how to set the Azure API address in `ApiClient.kt`, how to keep the SQLite file from being wiped on deployment, and how to enable Swagger for our demonstration.
+- 
   **Debugging:** We described our errors to Claude and it helped us find the causes.
 
   YouTube has been and will always be software developers best friend. We watched countless YouTube channels we frequent was bro code and Philipp Lackner. These YouTube video assisted us tremendously with understanding everything with the language. The YouTube channels we would like to highlight is The cherno, Dev Leonardo, Andy's tech tutorials, Tim shaw and Prof.Kurmas . The one thing these YouTube channels have in common is understanding everything that has to do with GitHub actions. These channels gave us a step by step on how to do create GitHub actions and help us explore other avenues to doing in creating GitHub actions. Code with me was another channel we used to assist us on how to upload our app on Google playstore.  
